@@ -1,0 +1,11 @@
+config-version: 1
+
+settings:
+  ignore-blast-protection: true
+  ignore-explosion-knockback-resistance: true
+  knockback-multiplier: 1.0
+  vertical-multiplier: 1.0
+  horizontal-multiplier: 1.0
+  player-wind-charge-enabled: true
+  breeze-wind-charge-enabled: true
+  mace-wind-burst-enabled: true

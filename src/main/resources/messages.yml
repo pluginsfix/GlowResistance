@@ -1,0 +1,18 @@
+no-permission:
+  - "[message] &#FB8808▶ &fНедостаточно &#FB8808прав на использование &fданной команды!"
+  - "[sound] BLOCK_ANVIL_LAND"
+
+reloaded:
+  - "[message] &#FFFF00◆ &fКонфигурация плагина &#FFFF00GlowResistance &fуспешно перезагружена!"
+  - "[sound] ENTITY_EXPERIENCE_ORB_PICKUP"
+
+help:
+  - "[message] "
+  - "[message] &#FFFF00▶ &fСписок доступных команд GlowResistance:"
+  - "[message] "
+  - "[message]   &#FFFF00◆ &f/glowresistance reload &8— &fперезагрузка конфигурации"
+  - "[message] "
+
+player-only:
+  - "[message] &#FB8808▶ &fДанную команду может выполнять только игрок!"
+  - "[sound] BLOCK_ANVIL_LAND"

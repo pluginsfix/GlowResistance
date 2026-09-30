@@ -1,0 +1,9 @@
+name: GlowResistance
+version: '${project.version}'
+main: pluginsfix.glowresistance.GlowResistance
+api-version: '1.21'
+author: pluginsfix
+commands:
+  glowresistance:
+    description: GlowResistance management command
+    permission: glowresistance.use
