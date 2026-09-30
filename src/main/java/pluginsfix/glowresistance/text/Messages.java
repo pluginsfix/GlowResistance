@@ -14,15 +14,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public final class Messages {
-    private static final Pattern HEX_PATTERN = Pattern.compile("&#([0-9a-fA-F]{6})");
     private static final LegacyComponentSerializer SERIALIZER = LegacyComponentSerializer.builder()
         .character('&')
         .hexColors()
-        .useUnusualXRepeatedCharacterHexFormat()
         .build();
 
     private final Plugin plugin;
@@ -102,20 +98,7 @@ public final class Messages {
     }
 
     private Component parseComponent(String text) {
-        String formatted = formatHexColors(text);
-        return SERIALIZER.deserialize(formatted).decoration(TextDecoration.ITALIC, false);
-    }
-
-    private String formatHexColors(String text) {
-        Matcher matcher = HEX_PATTERN.matcher(text);
-        StringBuilder buffer = new StringBuilder();
-        while (matcher.find()) {
-            String hex = matcher.group(1);
-            matcher.appendReplacement(buffer, "§x§" + hex.charAt(0) + "§" + hex.charAt(1)
-                + "§" + hex.charAt(2) + "§" + hex.charAt(3)
-                + "§" + hex.charAt(4) + "§" + hex.charAt(5));
-        }
-        matcher.appendTail(buffer);
-        return buffer.toString().replace('&', '§');
+        String normalized = text.replace('§', '&');
+        return SERIALIZER.deserialize(normalized).decoration(TextDecoration.ITALIC, false);
     }
 }
